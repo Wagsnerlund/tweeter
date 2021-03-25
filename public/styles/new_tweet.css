@@ -1,0 +1,126 @@
+.new-tweet {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-family: Bungee, sans-serif;
+}
+
+button {
+  font-family: Bungee, sans-serif;
+  color: #f4f1ec;
+  background-color: #4056A1;
+}
+
+label {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+}
+
+.counter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.neg {
+  color: red;
+}
+
+#tweet-text {
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  background-color: #f4f1ec;
+  outline: 0;
+  border-width: 0 0 4px;
+  border-color: rgb(75,75,75);
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+article {
+  display: flex;
+  padding: 20px;
+  margin-top: 75px;
+  margin-bottom: 25px;
+  flex-direction: column;
+  width: 100%;
+  border: 4px solid rgb(75,75,75);
+}
+
+.username {
+  visibility: hidden;
+}
+
+article:hover {
+  box-shadow: 6px 6px 5px 6px #9fb4fa; 
+  background-size: auto,0 0,auto;
+  font-weight: bold;
+}
+
+article:hover .username {
+  color: #9aabe2;
+  visibility: visible;
+}
+
+.hdr-all {
+  flex-direction: row;
+  padding: 10px;
+  height: 80px;
+  background-color: #f4f1ec;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-tweet {
+  display: flex;
+  height: 100px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 75px;
+  padding-right: 10px;
+}
+
+.ftr-all {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  height: 50px;
+  font-size: 16px;
+  border-top: 4px solid rgb(75, 75, 75);
+  background-color: #f4f1ec;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.blue {
+  color: #4056A1;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.error {
+  height: 50px;
+  /* background-color: yellow; */
+  border: 3px solid red;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: lighter;
+  color: red;
+  text-align: center;
+  margin: auto
+}

@@ -15,11 +15,30 @@ html {
  */
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif
 }
 
+nav {
+  position: sticky;
+  top: 0%;
+  width: 100%;
+  font-family: Bungee, sans-serif;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 90%;
+  background-color: #f4f1ec;
+  flex-direction: column;
+ }
