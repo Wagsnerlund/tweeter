@@ -116,11 +116,14 @@ article:hover .username {
 
 .error {
   height: 50px;
+  width: 50%;
+  
   /* background-color: yellow; */
   border: 3px solid red;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: lighter;
   color: red;
   text-align: center;
-  margin: auto
+  margin: auto;
+  margin-bottom: 20px
 }

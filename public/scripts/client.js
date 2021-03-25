@@ -1,6 +1,12 @@
 $(document).ready(function () {
   $('#err').hide();
 
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
@@ -38,7 +44,7 @@ $(document).ready(function () {
         <div class="my-tweet">${escape(tweet.content.text)}</div>
       </main>
       <footer class="ftr-all">
-        <div class="date">${tweet.created_at}</div>
+        <div class="date">${moment(tweet.created_at).fromNow()}</div>
         <div>
           <a><i class="fa fa-flag blue pr-10"></i></a>
           <a><i class="fa fa-retweet blue pr-10"></i></a>
@@ -61,17 +67,17 @@ $(document).ready(function () {
       $('#err').html('Exceeded maximum number of characters allotted.');
       $('#err').slideDown("slow");
     } else {
-      const formData = $(this);
 
       $.ajax({
         url: "/tweets",
         method: "POST",
-        data: formData.serialize()
-      }).then((result) => {
+        data: $(this).serialize()
+      })
+      .then((result) => {
         const temp = loadTweets();
         $("#display").append(temp);
-
-      }).catch(err => {
+      })
+      .catch(err => {
         console.log('ajax error caught');
         console.log(err);
       });
