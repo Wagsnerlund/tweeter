@@ -69,12 +69,13 @@ article:hover .username {
 }
 
 .hdr-all {
+  display: flex;
   flex-direction: row;
   padding: 10px;
   height: 80px;
   background-color: #f4f1ec;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .my-tweet {
@@ -115,15 +116,17 @@ article:hover .username {
 }
 
 .error {
+  display: flex;
   height: 50px;
-  width: 50%;
-  
-  /* background-color: yellow; */
+  width: 85%;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   border: 3px solid red;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: lighter;
   color: red;
-  text-align: center;
   margin: auto;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  padding: 10px
 }

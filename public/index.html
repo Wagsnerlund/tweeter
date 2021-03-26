@@ -42,35 +42,38 @@
     </div>
   </nav>
 
-  <header>
-    <div>
-      <img class="avatar" src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Chelsea <span>Wagner</span></h2>
-    </div>
-  </header>
+  <div class="hdr-body">
+    <header class="hdr-profile">
+      <div>
+        <img class="avatar" src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Chelsea <span>Wagner</span></h2>
+      </div>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets">
-        <div class="error" id="err">
-          <i class="fa fa-exclamation-triangle pr-10"></i>
-        </div>
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="buttons">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" id="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <section id="all-tweets">
-    </section>
-  </main>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <form method="POST" action="/tweets">
+          <div class="error" id="err">
+            <i class="fa fa-exclamation-triangle"></i>
+            <span id="errmsg"></span>
+            <i class="fa fa-exclamation-triangle"></i>
+          </div>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="buttons">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" id="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="all-tweets">
+      </section>
+    </main>
+  </div>
 </body>
 
 </html>

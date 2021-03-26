@@ -1,23 +1,33 @@
+/* General styling of the Navigation Bar */
 nav {
   display: flex;
   flex-direction: column;
-  height: 120px;
-  padding: 1.5em;
+  padding: .75em 1.5em;
+  height: 90px;
+  font-family: Bungee, sans-serif;
+  font-size: 40px;
   color: #FFFFFF;
   background-color: #4056A1;
-  font-size: 40px;
-  font-family: Bungee, sans-serif;
 }
 
+/* Styling for content within the Nav */
 .hdr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+/* Styling for "Write Tweet" and its icon */
 .write-tweet {
-  font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: red;
 }
 
 .column {
@@ -26,9 +36,11 @@ nav {
   justify-content: center;
 }
 
-.icon {
-  display: flex;
-  color: red;
-  font-size: 30px;
-  justify-content: center;
+
+/* Changes for Tablet Display */
+@media only screen and (max-width: 1024px) {
+  nav {
+    position: relative;
+    background-color:  goldenrod;
+  }
 }

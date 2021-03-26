@@ -1,23 +1,26 @@
 $(document).ready(function () {
   $('#err').hide();
 
+  // escape function used for 
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+  // function containing the get request
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
       method: "GET"
-    }).then((result) => {
+    })
+    .then((result) => {
       renderTweets(result);
       $('.counter').text('140');
       $('#tweet-text').val('');
       $('#err').slideUp();
-
-    }).catch(err => {
+    })
+    .catch(err => {
       console.log('ajax error caught');
       console.log(err);
     })
@@ -30,6 +33,7 @@ $(document).ready(function () {
     }
   }
 
+  // data received from the server
   const createTweetElement = function (tweet) {
     let $tweet = `
       <article class="tweetData">
@@ -55,19 +59,18 @@ $(document).ready(function () {
       `;
     return $tweet;
   }
-
+// post request 
   $("form").submit(function (event) {
     event.preventDefault();
     const msg = $('#tweet-text').val().trim();
 
     if (!msg) {
-      $('#err').html('Text must be entered.');
+      $('#errmsg').html('Text must be entered.');
       $('#err').slideDown("slow");
     } else if (msg.length > 140) {
-      $('#err').html('Exceeded maximum number of characters allotted.');
+      $('#errmsg').html('Exceeded maximum number of characters allotted.');
       $('#err').slideDown("slow");
     } else {
-
       $.ajax({
         url: "/tweets",
         method: "POST",

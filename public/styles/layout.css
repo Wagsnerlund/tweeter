@@ -1,18 +1,10 @@
+/* Style for the general layout of the WebApp */
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif
 }
 
 nav {
@@ -22,11 +14,21 @@ nav {
   font-family: Bungee, sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  color: #545149;
+  background-color: #f4f1ec;
+}
+
 .container {
   display: flex;
-  margin: 0 auto;
+  flex-direction: column;
   justify-content: center;
+  margin: 40px auto;
   width: 90%;
   background-color: #f4f1ec;
-  flex-direction: column;
  }
