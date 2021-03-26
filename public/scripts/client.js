@@ -1,14 +1,13 @@
 $(document).ready(function () {
   $('#err').hide();
 
-  // escape function used for 
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
-  // function containing the get request
+  // function containing the ajax get request
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
@@ -59,7 +58,8 @@ $(document).ready(function () {
       `;
     return $tweet;
   }
-// post request 
+
+// ajax post request 
   $("form").submit(function (event) {
     event.preventDefault();
     const msg = $('#tweet-text').val().trim();
