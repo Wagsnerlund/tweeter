@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $('#err').hide();
 
-  const escape =  function(str) {
+  const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -13,16 +13,17 @@ $(document).ready(function () {
       url: "/tweets",
       method: "GET"
     })
-    .then((result) => {
-      renderTweets(result);
-      $('.counter').text('140');
-      $('#tweet-text').val('');
-      $('#err').slideUp();
-    })
-    .catch(err => {
-      console.log('ajax error caught');
-      console.log(err);
-    })
+      .then((result) => {
+        $("#all-tweets").html('');
+        renderTweets(result);
+        $('.counter').text('140');
+        $('#tweet-text').val('');
+        $('#err').slideUp();
+      })
+      .catch(err => {
+        console.log('ajax error caught');
+        console.log(err);
+      })
   };
 
   const renderTweets = function (tweets) {
@@ -59,7 +60,7 @@ $(document).ready(function () {
     return $tweet;
   }
 
-// ajax post request 
+  // ajax post request 
   $("form").submit(function (event) {
     event.preventDefault();
     const msg = $('#tweet-text').val().trim();
@@ -76,14 +77,14 @@ $(document).ready(function () {
         method: "POST",
         data: $(this).serialize()
       })
-      .then((result) => {
-        const temp = loadTweets();
-        $("#display").append(temp);
-      })
-      .catch(err => {
-        console.log('ajax error caught');
-        console.log(err);
-      });
+        .then((result) => {
+          const temp = loadTweets();
+        })
+        .catch(err => {
+          console.log('ajax error caught');
+          console.log(err);
+        });
     }
   });
+  loadTweets();
 });
